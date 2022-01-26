@@ -1,6 +1,5 @@
-import { Component, ElementRef, Inject, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import { YT } from '../type';
-import { API } from '../youtube.token';
 
 @Component({
   selector: 'app-youtube',
@@ -11,11 +10,13 @@ export class YoutubeComponent implements OnInit {
 
   @Input()
   videoId = 'dQw4w9WgXcQ';
+  @Input()
+  api: YT | null;
 
   @ViewChild('ref', { static: true })
   ref: ElementRef<HTMLElement>;
 
-  constructor(@Inject(API) readonly api: YT) {}
+  constructor() {}
 
   ngOnInit() {
     const a = new this.api.Player(this.ref.nativeElement, {

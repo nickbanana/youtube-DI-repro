@@ -1,1 +1,3 @@
-<app-youtube *withYt="api$ | async"></app-youtube>
+<ng-container *ngIf="api$ | async as api">
+  <app-youtube [api]="api"></app-youtube>
+</ng-container>
