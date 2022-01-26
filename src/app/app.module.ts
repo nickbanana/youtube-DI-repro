@@ -3,10 +3,14 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { YoutubeComponent } from './youtube/youtube.component';
+import { WithYtDirective } from './with-yt.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    YoutubeComponent,
+    WithYtDirective
   ],
   imports: [
     BrowserModule,

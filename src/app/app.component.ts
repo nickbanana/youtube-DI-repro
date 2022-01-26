@@ -1,4 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
+import { Observable } from 'rxjs';
+import { YT } from './type';
+import { API$ } from './youtube.token';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +9,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'test';
+  constructor(@Inject(API$) readonly api$: Observable<YT>) {}
 }
